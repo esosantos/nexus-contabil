@@ -341,18 +341,31 @@ section:empty {
 /*About Section Start*/
 .about-section {
     background-color: var(--primary);
-    padding: var(--spacer-xl) 0;
-    /* mantém espaçamento normal */
-    min-height: auto;
-    /* garante que não fique gigante */
+    padding: 80px 0;
+    color: #fff;
+    position: relative;
 }
 
-.text-p {
-    color: var(--light);
-    font-size: 1.1rem;
-    text-align: justify;
-    padding: 0 1rem
+
+.about-section .title-about {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
+
+.about-section .text-p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-section img {
+    max-width: 300px;
+    /* tamanho máximo da imagem */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 /*About Section End*/
 /* ==============================================
@@ -360,7 +373,8 @@ section:empty {
    ============================================== */
 
 #servicos {
-    background-color: var(--light); /* fundo suave */
+    background-color: var(--light);
+    /* fundo suave */
     padding: var(--spacer-xl) 0;
 }
 
@@ -403,7 +417,8 @@ section:empty {
 }
 
 .service-card:hover .service-icon {
-    color: var(--info); /* muda suavemente a cor ao passar */
+    color: var(--info);
+    /* muda suavemente a cor ao passar */
 }
 
 .service-card h5 {
@@ -421,15 +436,35 @@ section:empty {
 
 /* Responsividade */
 @media (max-width: 992px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    /* Esconde a imagem em tablets e celulares */
+    .about-section img {
+        display: none !important;
+    }
+
+    .about-section .title-about {
+        text-align: center;
+    }
+
+    .about-section .text-p {
+        text-align: justify;
+    }
+
     #servicos .section-title {
         font-size: 2rem;
     }
+
     #servicos p.text-muted {
         font-size: 1rem;
     }
+
     .service-card {
         padding: 1.5rem 1rem;
     }
+
     .service-card .service-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
@@ -440,6 +475,7 @@ section:empty {
     #servicos .section-title {
         font-size: 1.75rem;
     }
+
     .service-card .service-icon {
         font-size: 2rem;
     }

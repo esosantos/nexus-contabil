@@ -133,8 +133,10 @@
                             números.
                         </p>
                     </div>
-                    <div class="mb-4 d-flex justify-content-center align-items-center d-none d-lg-flex">
+                    <div class="col-lg-6">
+                        <div class="mb-4 d-flex justify-content-center align-items-center d-none d-lg-flex">
                         <img src="assets/img/logo.png" alt="Nossa Equipe" class="img-fluid rounded w-50 mx-auto">
+                    </div>
                     </div>
 
 
@@ -407,9 +409,10 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <p class="footer-copyright mb-0">
-                            &copy; 2025 Nexus Contabil. Todos os direitos reservados.
+                            &copy; <span id="current-year"></span> Nexus Contabil. Todos os direitos reservados.
                         </p>
                     </div>
+
                     <div class="col-md-6 text-md-end">
                         <div class="footer-legal">
                             <a href="#">Política de Privacidade</a>
@@ -431,6 +434,11 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+
 </body>
 
 </html>

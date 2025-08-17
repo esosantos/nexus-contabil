@@ -165,7 +165,9 @@ section {
 .navbar {
     box-shadow: var(--box-shadow-sm);
 }
-
+.navbar .navbar-brand{
+    font-size: 1.6rem;
+}
 .nav-link {
     color: white;
     font-size: 1.2rem;

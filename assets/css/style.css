@@ -11,6 +11,33 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Para navegadores WebKit (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    /* Azul */
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3;
+    /* Azul escuro */
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+}
+
 main {
     display: block;
 }
@@ -165,9 +192,11 @@ section {
 .navbar {
     box-shadow: var(--box-shadow-sm);
 }
-.navbar .navbar-brand{
+
+.navbar .navbar-brand {
     font-size: 1.6rem;
 }
+
 .nav-link {
     color: white;
     font-size: 1.2rem;
@@ -289,7 +318,9 @@ section {
         10% 50%, 25% 65%, 40% 70%, 55% 60%, 70% 65%, 85% 55%, 95% 50%;
 
 }
-
+.hero-image{
+    opacity: 0.9;
+}
 
 /*Home Section End*/
 
@@ -297,12 +328,14 @@ section {
 .about-section {
     background-color: var(--primary);
 }
-.text-p{
+
+.text-p {
     color: var(--light);
     font-size: 1.1rem;
     text-align: justify;
     padding: auto;
 }
+
 /*About Section End*/
 
 
@@ -364,10 +397,12 @@ section {
     .display-4 {
         font-size: 2.5rem;
     }
-    .title-about{
+
+    .title-about {
         text-align: center;
     }
-    .text-p{
+
+    .text-p {
         font: 16px;
         padding-left: 20px;
         padding-right: 20px;

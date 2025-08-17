@@ -355,6 +355,96 @@ section:empty {
 }
 
 /*About Section End*/
+/* ==============================================
+   Services Section
+   ============================================== */
+
+#servicos {
+    background-color: var(--light); /* fundo suave */
+    padding: var(--spacer-xl) 0;
+}
+
+#servicos .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+#servicos p.text-muted {
+    color: var(--gray-500);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card .service-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: var(--info); /* muda suavemente a cor ao passar */
+}
+
+.service-card h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+}
+
+.service-card p {
+    color: var(--gray-500);
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    #servicos .section-title {
+        font-size: 2rem;
+    }
+    #servicos p.text-muted {
+        font-size: 1rem;
+    }
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+    .service-card .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #servicos .section-title {
+        font-size: 1.75rem;
+    }
+    .service-card .service-icon {
+        font-size: 2rem;
+    }
+}
+
 
 /* ==============================
    FOOTER CSS - NEXUS CONTABIL
@@ -378,42 +468,9 @@ section:empty {
     color: var(--primary);
 }
 
-/* Newsletter Section */
-.newsletter-section {
-    background-color: var(--gray-800);
-    padding: 2rem 0;
-}
 
-.newsletter-section h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
 
-.newsletter-section p {
-    font-size: 0.95rem;
-    color: #d1d1d1;
-}
 
-/* Newsletter Form */
-.newsletter-form .form-control {
-    border-radius: var(--border-radius);
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-}
-
-.newsletter-form .btn-accent {
-    background-color: var(--primary);
-    color: var(--light);
-    border: none;
-    border-radius: var(--border-radius);
-    padding: 0.5rem 1.25rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.newsletter-form .btn-accent:hover {
-    background-color: #3651d1;
-}
 
 /* Main Footer */
 .main-footer {
@@ -511,19 +568,6 @@ section:empty {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {}
-
-@media (max-width: 576px) {
-    .newsletter-form .input-group {
-        flex-direction: column;
-    }
-
-    .newsletter-form .form-control,
-    .newsletter-form .btn-accent {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-}
 
 /* Responsividade aprimorada */
 @media (max-width: 768px) {

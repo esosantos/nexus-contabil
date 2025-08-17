@@ -1,6 +1,14 @@
 /* ==============================================
    NORMALIZE.CSS (v8.0.1) - Mantém consistência entre navegadores
    ============================================== */
+/* Solução: Reset básico no início do CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -144,9 +152,10 @@ h6 {
 
 
 /* Espaçamentos consistentes */
-section {
-    padding: var(--spacer-xl) 0;
+section:empty {
+    padding: 0;
 }
+
 
 .container-small {
     max-width: 800px;
@@ -318,9 +327,14 @@ section {
         10% 50%, 25% 65%, 40% 70%, 55% 60%, 70% 65%, 85% 55%, 95% 50%;
 
 }
-.hero-image{
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
     opacity: 0.9;
 }
+
 
 /*Home Section End*/
 
@@ -333,7 +347,7 @@ section {
     color: var(--light);
     font-size: 1.1rem;
     text-align: justify;
-    padding: auto;
+    padding: 0 1rem
 }
 
 /*About Section End*/
@@ -344,6 +358,11 @@ section {
     :root {
         --spacer-lg: 1.5rem;
         --spacer-xl: 2rem;
+    }
+
+    section {
+        padding: var(--spacer-lg) 0;
+        /* menor padding em mobile */
     }
 
     .hero-content {

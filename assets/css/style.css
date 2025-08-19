@@ -198,7 +198,7 @@ section:empty {
 
 
 /* Navbar personalizada */
-/
+
 .navbar {
     box-shadow: var(--box-shadow-sm);
 }
@@ -221,7 +221,8 @@ section:empty {
 
 .nav-link:hover,
 .nav-link:focus {
-    background: rgba(255, 255, 255, 0.15); /* leve destaque */
+    background: rgba(255, 255, 255, 0.15);
+    /* leve destaque */
     color: #fff;
 }
 
@@ -441,18 +442,15 @@ section:empty {
 /* ==============================
    F.A.Q 
 ============================== */
-
-/* FAQ Section */
 #faq {
-    background: #f9fbfd;
-    /* fundo bem suave */
+    background: var(--light);
+    padding: 4rem 0;
 }
 
 #faq .section-title {
     font-size: 2.2rem;
     font-weight: 700;
     color: #0056b3;
-    /* azul elegante */
     margin-bottom: 0.5rem;
 }
 
@@ -464,53 +462,54 @@ section:empty {
 /* Accordion container */
 .accordion-item {
     border: none;
-    margin-bottom: 1rem;
-    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s ease;
+    background: #ffffff;
+    border-left: 4px solid transparent;
+    /* destaque sutil */
 }
 
+/* Hover elegante */
 .accordion-item:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #0056b3;
+    /* destaque azul */
 }
 
-/* Accordion header button */
+/* Botão do accordion */
 .accordion-button {
-    background: #fff;
-    color: #333;
-    font-weight: 600;
-    padding: 1rem 1.25rem;
-    font-size: 1.05rem;
-    border: none;
-    box-shadow: none;
-    transition: all 0.3s ease;
-}
-
-.accordion-button::after {
-    filter: brightness(0) saturate(100%) invert(30%) sepia(93%) saturate(2100%) hue-rotate(195deg) brightness(90%) contrast(95%);
-    /* deixa a setinha em azul */
-}
-
-.accordion-button:not(.collapsed) {
-    background: #e9f2ff;
-    /* azul bem claro */
+    background: #ffffff;
     color: #0056b3;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion-button.collapsed {
+    color: #0056b3;
+    background: #f9f9f9;
+}
+
+.accordion-button:hover,
+.accordion-button:focus {
+    background: #e6f0ff;
+    /* azul bem suave */
+    color: #003d80;
 }
 
 /* Corpo do accordion */
 .accordion-body {
-    font-size: 0.95rem;
-    color: #555;
+    font-size: 1rem;
+    color: #495057;
+    background: #fefefe;
+    padding: 1rem 1.5rem;
     line-height: 1.6;
-    padding: 1rem 1.25rem;
 }
-
-
-
 
 
 

@@ -336,59 +336,177 @@ section:empty {
 
 /*Home Section End*/
 
-/* About Section */
-.about-section {
-    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+/* ===== ESTILOS GERAIS ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ===== SEÇÃO SOBRE ===== */
+.about-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+/* Elementos decorativos de fundo - Bolhas */
+.bg-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 15s infinite;
+    transition-timing-function: linear;
+}
+
+.bg-bubbles li:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+}
+
+.bg-bubbles li:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    left: 70%;
+    top: 60%;
+    animation-delay: 2s;
+    animation-duration: 22s;
+}
+
+.bg-bubbles li:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    left: 60%;
+    top: 30%;
+    animation-delay: 4s;
+    animation-duration: 18s;
+}
+
+.bg-bubbles li:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    left: 30%;
+    top: 70%;
+    animation-delay: 1s;
+    animation-duration: 25s;
+}
+
+.bg-bubbles li:nth-child(5) {
+    width: 60px;
+    height: 60px;
+    left: 80%;
+    top: 10%;
+    animation-delay: 3s;
+    animation-duration: 15s;
+}
+
+/* Ondulação na parte inferior */
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    transform: rotate(180deg);
+    opacity: 0.1;
+}
+
+/* Animação para os elementos flutuantes */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Sombra de texto para melhor contraste */
 .text-shadow {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Imagem circular da empresa */
 .about-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
 }
 
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+/* Container de texto da missão */
 .mission-text-container {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+    color: var(--primary);
+    font-size: 1.2rem;
     padding: 20px;
     margin-bottom: 20px;
-    font-size: 1.2rem;
-    text-align: justify;
-
+    transition: all 0.3s ease;
 }
 
+
+/* Ícones sociais */
 .social-icons a {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
-    background: var(--light);
-    color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 5px;
     transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: var(--light);
     transform: translateY(-3px);
 }
 
+/* Texto da seção sobre */
 .about-text {
     font-size: 1.2rem;
     text-align: justify;
     line-height: 1.7;
 }
+
+/* Ajuste para garantir que o conteúdo fique acima dos elementos de fundo */
+.about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
 
 /*About Section End*/
 /* ==============================================
@@ -709,9 +827,6 @@ section:empty {
 }
 
 
-
-
-
 /* Main Footer */
 .main-footer {
     background-color: var(--dark);
@@ -815,6 +930,14 @@ section:empty {
     }
 
     /* Esconde a imagem em tablets e celulares */
+    .about-section .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .about-img {
+        width: 150px;
+        height: 150px;
+    }
     .about-section img {
         display: none !important;
     }

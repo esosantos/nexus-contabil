@@ -204,33 +204,41 @@ section:empty {
     box-shadow: var(--box-shadow-sm);
 }
 
+/* Ícone do logotipo */
 .logo-icon {
     font-size: 2.5rem;
-    color: var(--light);
-    /* azul inicial */
-
-    /* inclinação inicial */
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: var(--light); 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2), 
+                 0 0 2px rgba(255,255,255,0.2);
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-icon:hover {
-    transform: rotate(-20deg) scale(1.2);
-    /* mantém inclinação e aumenta suavemente */
+    transform: rotate(-20deg) scale(1.3);
     color: #ffffff;
-    /* fica branco no hover */
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.3), 
+                 0 0 4px rgba(255,255,255,0.3);
 }
 
 /* Texto do logotipo */
 .logo-text {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800; /* mais pesado para destaque */
     color: var(--light);
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0px;
-    /* aproximando as letras */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    transition: color 0.3s ease, transform 0.3s ease;
+    letter-spacing: -1px; /* leve ajuste */
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2), 
+                 0 0 3px rgba(255,255,255,0.2);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
+
+.logo-text:hover {
+    transform: scale(1.05);
+    color: #ffffff;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.3), 
+                 0 0 4px rgba(255,255,255,0.3);
+}
+
 
 
 /* Alinhamento vertical da navbar */
@@ -1135,45 +1143,15 @@ body {
     color: #7f8c8d;
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-    .footer-widget {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
 
-    .footer-contact {
-        align-items: center;
-        text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .footer-legal {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .separator {
-        display: none;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
-}
-
-/* Botão flutuante WhatsApp */
 /* Botão flutuante WhatsApp */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
-    right: -70px;
-    /* inicia fora da tela */
+    right: 30px; /* valor final */
     width: 60px;
     height: 60px;
     background-color: #25d366;
-    /* verde WhatsApp */
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -1181,37 +1159,33 @@ body {
     justify-content: center;
     font-size: 1.8rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: right 0.5s ease, transform 0.3s ease;
-    z-index: 9999;
     text-decoration: none;
-    /* remove sublinhado */
+    z-index: 9999;
+
+    /* Inicial invisível e deslocado para baixo */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 /* Hover */
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: translateY(0) scale(1.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Botão visível quando aparecer */
+/* Botão visível */
 .whatsapp-float.show {
-    right: 30px;
-    /* desliza para dentro da tela */
-}
-
-/* Responsividade */
-@media (max-width: 576px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-        bottom: 20px;
-        right: 20px;
-    }
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-/* Responsividade */
+
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
 @media (max-width: 992px) {
     .about-section .display-4 {
         font-size: 2.5rem;
@@ -1249,6 +1223,15 @@ body {
     .service-card .service-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
+    }
+      .footer-widget {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-contact {
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -1438,5 +1421,24 @@ body {
 
     .service-card .service-icon {
         font-size: 2rem;
+    }
+      .footer-legal {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+       .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
     }
 }

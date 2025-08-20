@@ -334,37 +334,61 @@ section:empty {
     opacity: 0.9;
 }
 
-
 /*Home Section End*/
 
-/*About Section Start*/
+/* About Section */
 .about-section {
-    background-color: var(--primary);
-    padding: 80px 0;
-    color: #fff;
-    position: relative;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
 }
 
-
-.about-section .title-about {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 30px;
+.text-shadow {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.about-section .text-p {
-    font-size: 1rem;
-    line-height: 1.7;
+.about-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.mission-text-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: justify;
+
 }
 
-.about-section img {
-    max-width: 300px;
-    /* tamanho máximo da imagem */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.social-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: var(--light);
+    color: var(--primary);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease;
 }
 
+.social-icons a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--light);
+    transform: translateY(-3px);
+}
+
+.about-text {
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.7;
+}
 
 /*About Section End*/
 /* ==============================================
@@ -984,5 +1008,4 @@ section:empty {
     .service-card .service-icon {
         font-size: 2rem;
     }
-}
 }

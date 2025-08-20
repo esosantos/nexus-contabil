@@ -58,6 +58,7 @@ main {
 :root {
     /* Paleta principal (8 cores) */
     --primary: #4361ee;
+    --bluedark: #0a2f4c;
     --secondary: #6c757d;
     --success: #28a745;
     --info: #17a2b8;
@@ -837,36 +838,145 @@ body {
     color: #ffffff;
 }
 
+/* ==============================
+   SECTION CONTACT 
+   ============================== */
+.contact-section {
+    background: #f8f9fa;
+    color: var(--bluedark);
+}
 
+/* Título e subtítulo */
+.contact-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.contact-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--bluedark);
+}
+
+/* Formulário */
+/* Formulário quadrado e minimalista */
+.contact-form {
+    background: #ffffff;
+    border-radius: 0;
+    /* sem arredondamento */
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* leve sombra */
+}
+
+/* Inputs e textarea quadrados */
+.contact-form .form-control {
+    border-radius: 0;
+    /* sem arredondamento */
+    border: 1px solid #ced4da;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder estilizado */
+.contact-form .form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+    font-style: italic;
+}
+
+/* Focus nos campos */
+.contact-form .form-control:focus {
+    border-color: var(--bluedark);
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/* Botão quadrado */
+.btn-submit {
+    border-radius: 0;
+    /* cantos retos */
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    display: block;
+    margin: 1rem auto 0;
+    /* centralizado */
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--bluedark);
+    transform: scale(1.05);
+    /* leve efeito de destaque */
+}
+
+
+/* Card Redes Sociais */
+/* Logo circular com contorno azul */
+.social-logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* circular */
+    object-fit: cover;
+    /* cover da imagem */
+    display: block;
+    margin: 0 auto 1rem;
+    border: 2px solid var(--primary);
+    background-color: var(--bluedark);
+
+    padding: 5px;
+    /* espaço entre contorno e imagem, opcional */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.social-logo-img:hover {
+    transform: scale(1.05);
+    /* leve aumento ao hover */
+}
+
+.social-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-card h4 {
+    font-weight: 600;
+}
+
+.social-icons .social-icon {
+    font-size: 1.5rem;
+    color: var(--bluedark);
+    background-color: var(--light);
+
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+    color: var(--bluedark);
+    transform: scale(1.2);
+}
 
 /* ==============================
    FOOTER CSS - NEXUS CONTABIL
    ============================== */
 
-/* Seções do Footer */
 .footer-section {
-    background-color: var(--dark);
+    background-color: var(--primary);
     color: var(--light);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-section a {
-    color: var(--light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: var(--primary);
-}
-
-
-/* Main Footer */
 .main-footer {
-    background-color: var(--dark);
     padding: 3rem 0;
-    color: var(--light);
 }
 
 .footer-widget {
@@ -874,87 +984,176 @@ body {
 }
 
 .footer-title {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
     color: var(--light);
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
 .footer-text {
-    font-size: 0.95rem;
-    color: #d1d1d1;
+    color:var(--light);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
 }
 
-.footer-social {
-    margin-top: 1rem;
+/* Footer Social Icons - estilo elegante igual About Section */
+.footer-social a.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: transparent; /* fundo transparente */
+    border: 2px solid #fff; /* borda branca */
+    border-radius: 50%;
+    font-size: 1.3rem;
+    margin: 0 6px; /* espaçamento entre os ícones */
+    transition: all 0.4s ease;
+    text-decoration: none;
 }
 
-.footer-social a {
-    display: inline-block;
-    margin-right: 0.5rem;
-    color: var(--light);
-    font-size: 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+.footer-social a.social-link:hover {
+    background-color: #fff; /* fundo branco ao passar o mouse */
+    color: var(--primary-color, #003d80); /* cor do ícone ao hover */
+    transform: scale(1.1); /* leve aumento */
 }
 
-.footer-social a:hover {
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
-/* Footer Links */
 .footer-links {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
 }
 
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
 }
 
-.footer-links li a {
+.footer-links a {
     color: var(--light);
-    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
 }
 
-.footer-links li a:hover {
-    color: var(--primary);
+.footer-links a::before {
+    content: '→';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--accent-color);
 }
 
-/* Contact Info */
-.footer-contact .contact-item {
+.footer-links a:hover {
+    color: white;
+    padding-left: 15px;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: #d1d1d1;
+    gap: 12px;
 }
 
-.footer-contact .contact-item i {
-    margin-right: 0.5rem;
+.contact-item i {
+    color: var(--accent-color);
     font-size: 1.2rem;
-    color: var(--primary);
+    margin-top: 4px;
+    min-width: 24px;
 }
 
-/* Footer Bottom */
+.contact-item div {
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.contact-item strong {
+    color: white;
+    font-weight: 600;
+}
+
 .footer-bottom {
-    background-color: var(--gray-800);
-    color: #d1d1d1;
-    font-size: 0.85rem;
+    background-color: rgba(0,0,0,0.2);
+    padding: 1rem 0;
 }
 
-.footer-bottom a {
-    color: #d1d1d1;
-    transition: color 0.3s ease;
+.footer-copyright {
+    color: #bdc3c7;
+    margin: 0;
 }
 
-.footer-bottom a:hover {
-    color: var(--primary);
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.footer-bottom .separator {
-    margin: 0 0.5rem;
-    color: #d1d1d1;
+.footer-legal a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+    color: var(--accent-color);
+}
+
+.separator {
+    color: #7f8c8d;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .footer-widget {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .footer-contact {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-legal {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
 }
 
 

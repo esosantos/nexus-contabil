@@ -1,0 +1,27 @@
+/* Sections com altura mínima e padding */
+.fade-section {
+  min-height: 80vh; /* garante espaço suficiente */
+  padding: 80px 20px; /* dá espaço interno para não quebrar layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background-color: #f5f5f5;
+  box-sizing: border-box; /* evita que padding aumente a altura total */
+}
+
+/* Fade in suave dos elementos */
+.fade-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  width: 100%; /* impede que elementos causem quebras */
+}
+
+/* Classe adicionada para mostrar o elemento */
+.fade-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}

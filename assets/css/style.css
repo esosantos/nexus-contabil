@@ -203,11 +203,43 @@ section:empty {
     box-shadow: var(--box-shadow-sm);
 }
 
-.navbar .navbar-brand {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: white;
+.logo-icon {
+    font-size: 2.5rem;
+    color:var(--light);
+    /* azul inicial */
+  
+    /* inclinação inicial */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.logo-icon:hover {
+    transform: rotate(-20deg) scale(1.2);
+    /* mantém inclinação e aumenta suavemente */
+    color: #ffffff;
+    /* fica branco no hover */
+}
+
+/* Texto do logotipo */
+.logo-text {
+    font-size: 2rem;
+    /* tamanho maior para destaque */
+    font-weight: 700;
+    color: var(--light);
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* mais moderno */
+    letter-spacing: 1.5px;
+    /* espaçamento elegante */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* leve sombra para profundidade */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Alinhamento vertical da navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
 
 /* Links */
 .nav-link {
@@ -465,9 +497,9 @@ body {
 
 /* Container de texto da missão */
 .mission-text-container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    color: var(--primary);
+    color: var(--light);
     font-size: 1.2rem;
     padding: 20px;
     margin-bottom: 20px;
@@ -500,13 +532,14 @@ body {
     text-align: justify;
     line-height: 1.7;
 }
-
+.mission-text-container p{
+    text-align: justify;   
+}
 /* Ajuste para garantir que o conteúdo fique acima dos elementos de fundo */
 .about-section .container {
     position: relative;
     z-index: 2;
 }
-
 
 /*About Section End*/
 /* ==============================================
@@ -697,7 +730,7 @@ body {
 #problemas-pme .section-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #0056b3;
+    color: var(--primary);
     margin-bottom: 0.5rem;
 }
 
@@ -710,7 +743,7 @@ body {
 .problem-intro h4 {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #0056b3;
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -925,11 +958,6 @@ body {
 
 /* Responsividade */
 @media (max-width: 992px) {
-    .about-section {
-        padding: 60px 20px;
-    }
-
-    /* Esconde a imagem em tablets e celulares */
     .about-section .display-4 {
         font-size: 2.5rem;
     }
@@ -938,6 +966,7 @@ body {
         width: 150px;
         height: 150px;
     }
+
     .about-section img {
         display: none !important;
     }
@@ -1032,14 +1061,28 @@ body {
         font-size: 2.5rem;
     }
 
+    .about-section .display-4 {
+        font-size: 1.75rem;
+    }
+
+    .about-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
     .title-about {
         text-align: center;
     }
 
-    .text-p {
-        font: 16px;
-        padding-left: 20px;
-        padding-right: 20px;
+    .mission-text-container>p {
+        font-size: 16px;
+        text-align: justify;
     }
 
     /* Cards PME em telas pequenas */
